@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       
+            /* Perspective is the representation of 3D objects on a 2D plane 
+            //to give the appearance depth and distance in relation to each other.   */
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           }
+           body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            min-height: 100vh;
+           }
+           ul li{
+            list-style: none;
+           }
+           .container{
+            width: 500px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 20px;
+         
+           }
+           .card{
+            width: 100%;
+            height: 100%;
+            /* background-color: red; */
+           }
+           .cards, .card{
+           width: 100%;
+           height: 100%;
+           background-color: #fff;
+           border-radius: 7px;
+           box-shadow: 0 10px 10px #000;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           padding: 10px;
+           position: absolute;
+           transition: transform .25s linear;
+           backface-visibility: hidden;
+           }
+           .cards , .card{
+            height: calc(100% / 4 - 10px);
+            width: calc(100% / 4 - 10px);
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            perspective: 800px;
+            transform-style: preserve-3d;
+           }
+           .cards{
+            height: 100%;
+            width: 100%;
+            flex-wrap: wrap;
+           }
+           img{
+            width: 100%;
+            height: 100%;
+            background: transparent;
+           }
+           .back-view img{
+            max-width: 85px;
+            max-height: 85px;
+            
+           }
+           span i{
+            font-size: 40px;
+            color: blue;
+            text-align: center;
+           }
+           .back-view{
+            /* display: none; */
+            transform: rotateY(-180deg);
+           }
+          .card .front-view{
+           display: flex;
+      
+           justify-content: center;
+           align-items: center;
+           min-height: 100vh;
+          
+          
+           }
+           .card:hover .back-view{
+            transform: rotateY(0);
+           }
+           .card:hover .front-view{
+            transform: rotateY(180deg);
+           }
+    </style>
+</head>
+<body>
+   <div class="container">
+<ul class="cards">
+    <li class="card">
+        <div class="view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view">
+            <img src="https://image.shutterstock.com/image-photo/red-diamond-isolated-on-white-260nw-145970471.jpg" alt="red diamond">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view">
+            <img src="https://st.depositphotos.com/1653005/2922/i/950/depositphotos_29227835-stock-photo-green-diamond.jpg" alt="green diamond" >
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://i.pinimg.com/originals/49/4c/cf/494ccfd39259747819b27b0bbb7dc868.jpg" alt="blue diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://www.props4shows.co.uk/Portals/1/product/images/prdeb5b080a-0664-4f58-99f9-b6427cf4db3a.jpg" alt="yellow diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://th.bing.com/th/id/R.215ae7e6195732db67c3ba0f09831ee3?rik=o7SvPZvzKBiKtA&riu=http%3a%2f%2fstatic8.depositphotos.com%2f1062042%2f932%2fv%2f950%2fdepositphotos_9320625-stock-illustration-diamond.jpg&ehk=6rX0TL3akOkv2wGVBC0C2h26oUz9%2bzgACz9wScqKlQA%3d&risl=&pid=ImgRaw&r=0" alt="white diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://i.pinimg.com/originals/e5/a6/77/e5a677346c6568464847e6ea44cdd421.jpg" alt="pink diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://th.bing.com/th/id/R.e495ec4259d402202a9abc11302108ad?rik=x%2b66MlgFrgkbaQ&riu=http%3a%2f%2fwww.en.heart-in-diamond.hk%2fimages%2fphotos%2fBlue+diamond.jpg&ehk=z7DcqPVjtRPV%2b2yNMVWhWvvKsCVb6dBWkJQ3hiFXPEk%3d&risl=&pid=ImgRaw&r=0" alt="ash diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://i.pinimg.com/originals/fa/ea/42/faea429b2a26b60108da89b8d219cf86.jpg" alt="purple diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://image.shutterstock.com/image-photo/red-diamond-isolated-on-white-260nw-145970471.jpg" alt="red diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://st.depositphotos.com/1653005/2922/i/950/depositphotos_29227835-stock-photo-green-diamond.jpg" alt="green diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://i.pinimg.com/originals/49/4c/cf/494ccfd39259747819b27b0bbb7dc868.jpg" alt="blue diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://www.props4shows.co.uk/Portals/1/product/images/prdeb5b080a-0664-4f58-99f9-b6427cf4db3a.jpg" alt="yellow diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://th.bing.com/th/id/R.215ae7e6195732db67c3ba0f09831ee3?rik=o7SvPZvzKBiKtA&riu=http%3a%2f%2fstatic8.depositphotos.com%2f1062042%2f932%2fv%2f950%2fdepositphotos_9320625-stock-illustration-diamond.jpg&ehk=6rX0TL3akOkv2wGVBC0C2h26oUz9%2bzgACz9wScqKlQA%3d&risl=&pid=ImgRaw&r=0" alt="white diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://i.pinimg.com/originals/e5/a6/77/e5a677346c6568464847e6ea44cdd421.jpg" alt="pink diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://th.bing.com/th/id/R.e495ec4259d402202a9abc11302108ad?rik=x%2b66MlgFrgkbaQ&riu=http%3a%2f%2fwww.en.heart-in-diamond.hk%2fimages%2fphotos%2fBlue+diamond.jpg&ehk=z7DcqPVjtRPV%2b2yNMVWhWvvKsCVb6dBWkJQ3hiFXPEk%3d&risl=&pid=ImgRaw&r=0" alt="ash diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+    <li class="card">
+        <div class="view front-view"><span><i class="fa-solid fa-question fa-fade"></i></span></div>
+        <div class="view back-view">
+            <img src="https://i.pinimg.com/originals/fa/ea/42/faea429b2a26b60108da89b8d219cf86.jpg" alt="purple diamond" width="80px" height="80px">
+        </div>
+    </li>
+
+
+
+</ul>
+   </div>
+</body>
+<script>
+    const cards=document.querySelectorAll(".card")
+   
+    let cardOne,cardTwo;
+    function flipCard(e){
+        let clickedCard=e.target; //getting user clicked card
+        clickedCard.classList.add("flip")
+    }
+    cards.forEach(card=>{
+        console.log(cards);
+    })
+</script>
+</html>

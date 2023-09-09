@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #5b75bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    box-shadow: 0px 20px 65px #8f8d8d;
+    border-radius: 20px;
+    padding: 10px;
+}
+.card.shake{
+    animation: shake 0.3s ease-in-out;
+}
+@keyframes shake{
+    0%,100%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-15px);
+    }
+    40%{
+        transform: translateX(15px);
+    }
+    60%{
+        transform: translateX(-10px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+}
+.cards , .card , .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cards .card .view {
+    width: 100%;
+    height: 100%;
+    background-color:#fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 20px 40px #c9c4c4;
+    position: absolute;
+    transition: transform .1s linear;
+    backface-visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+.cards .card{
+    cursor: pointer;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+    position: relative;
+     /* Perspective is the representation of 3D objects on a 2D plane 
+            //to give the appearance depth and distance in relation to each other.   */
+            perspective: 800px;
+            transform-style: preserve-3d;
+}
+ul li{
+    list-style: none;
+}
+#back-view img{
+    max-width: 55px;
+}
+.view{
+    width: 100%;
+    height: 100%;
+}
+#front-view i{
+font-size: 40px;
+color: blue;
+
+}
+/* #front-view{
+    display: inline-block;
+} */
+.card #back-view{
+    /* display: none; */
+    transform: rotateY(-180deg);
+}
+.card.flip  #front-view{
+    transform: rotateY(180deg);
+}
+.card.flip #back-view{
+    transform: rotateY(0);
+}
+/* .card:hover #back-view{
+    transform: rotateY(-180deg);
+} */
+    </style>
+</head>
+<body>
+    <div class="container">
+<ul class="cards">
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://image.shutterstock.com/image-photo/red-diamond-isolated-on-white-260nw-145970471.jpg" alt="red diamond"> -->
+    <img src="./image-1.jpg" alt="red diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img  src="https://st.depositphotos.com/1653005/2922/i/950/depositphotos_29227835-stock-photo-green-diamond.jpg" alt="green diamond"> -->
+    <img  src="./image-2.jpg" alt="green diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://i.pinimg.com/originals/49/4c/cf/494ccfd39259747819b27b0bbb7dc868.jpg" alt="blue diamond"> -->
+    <img src="./image-3.jpg" alt="blue diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://www.props4shows.co.uk/Portals/1/product/images/prdeb5b080a-0664-4f58-99f9-b6427cf4db3a.jpg" alt="yellow diamond"> -->
+    <img src="./image-4.jpg" alt="yellow diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://th.bing.com/th/id/R.215ae7e6195732db67c3ba0f09831ee3?rik=o7SvPZvzKBiKtA&riu=http%3a%2f%2fstatic8.depositphotos.com%2f1062042%2f932%2fv%2f950%2fdepositphotos_9320625-stock-illustration-diamond.jpg&ehk=6rX0TL3akOkv2wGVBC0C2h26oUz9%2bzgACz9wScqKlQA%3d&risl=&pid=ImgRaw&r=0" alt="white diamond"> -->
+    <img src="./image-5.jpg" alt="white diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://i.pinimg.com/originals/e5/a6/77/e5a677346c6568464847e6ea44cdd421.jpg" alt="pink diamond"> -->
+    <img src="./image-6.jpg" alt="pink diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://th.bing.com/th/id/R.e495ec4259d402202a9abc11302108ad?rik=x%2b66MlgFrgkbaQ&riu=http%3a%2f%2fwww.en.heart-in-diamond.hk%2fimages%2fphotos%2fBlue+diamond.jpg&ehk=z7DcqPVjtRPV%2b2yNMVWhWvvKsCVb6dBWkJQ3hiFXPEk%3d&risl=&pid=ImgRaw&r=0" alt="ash diamond"> -->
+    <img src="./image-7.jpg" alt="ash diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <!-- <img src="https://i.pinimg.com/originals/fa/ea/42/faea429b2a26b60108da89b8d219cf86.jpg" alt="purple diamond"> -->
+     <img src="./image-8.jpg" alt="purple diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-1.jpg" alt="red diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img  src="./image-2.jpg" alt="green diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-3.jpg" alt="blue diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-4.jpg" alt="yellow diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-5.jpg" alt="white diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-6.jpg" alt="pink diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-7.jpg" alt="ash diamond">
+</div>
+</li>
+
+<li class="card">
+    <div class="view" id="front-view"><i class="fa-solid fa-question fa-fade"></i></div>
+<div class="view" id="back-view">
+    <img src="./image-8.jpg" alt="purple diamond">
+</div>
+</li>
+</ul>
+    </div>
+    <div class="result" style="background-color: #ffff;color: #000;width: 250px;height: 250px;border-radius: 20px;">
+        
+    </div>
+</body>
+<script>
+  let result=document.querySelector('.result')
+// Initial Time
+let seconds=0
+minutes=0
+
+// Initial moves and win count
+let movesCount=0,
+winCount=0
+
+// for timer
+const timeGenerator=()=>{
+    seconds+=1
+    // minutes logic
+    if(seconds>=60){
+        minutes+=1
+        seconds=0
+    }
+}
+
+// format time before displaying
+let secondsValue=seconds<10?`0${seconds}`:seconds;
+let minutesValues=minutes<10?`0${minutes}`:minutes
+result.innerHTML=`<span>Time:</span>$${minutesValues}:${secondsValue}`
+
+
+// For calculating moves
+const movesCounter=()=>{
+    movesCount+=1
+    moves.innerHTML=`<span>Moves:</span>${movesCount}`
+}
+  
+let count=0
+let arrValues=0
+    let cardOne , cardTwo;
+    let disableDeck=false;
+    let matchedCards=0;
+    const cards=document.querySelectorAll('.card')
+    // console.log(cards);
+    function flipCard(e){
+        let clickedCard=e.target //getting useer clicked card
+        if(clickedCard!==cardOne && !disableDeck){
+            clickedCard.classList.add("flip") ///class ilku add avinnu filp
+        if(!cardOne){
+            //return the cardOne to clickedCard
+            return cardOne=clickedCard
+        }
+console.log(e.target);
+
+cardTwo=clickedCard
+disableDeck=true;
+let cardOneImg=cardOne.querySelector("img").src
+let cardTwoImg=cardTwo.querySelector("img").src
+matchCards(cardOneImg,cardTwoImg)
+
+console.log(cardOne,cardTwo);
+        }
+        
+}
+function matchCards(img1,img2){
+    console.log(img1,img2);
+    if(img1==img2){
+
+        matchedCards++ //incrmnet matched value by 1
+        count++
+        // console.log(count);
+
+       
+        if(matchedCards==8){
+            setTimeout(()=>{
+                return shuffleCards()
+            },1000) //calling shufflecard function after 1s
+          
+        }
+        //if two cards img matched
+        // return console.log("Card Matched");
+        cardOne.removeEventListener("click" , flipCard)
+        cardTwo.removeEventListener("click",flipCard)
+        cardOne=cardTwo="" //setting booth card value to  blaank
+        return disableDeck=false;
+    }
+    
+    //if two card not matched
+    setTimeout(()=>{
+// console.log("Card is not matched");
+cardOne.classList.add("shake")
+        cardTwo.classList.add("shake")
+    },300)
+   
+// console.log(img1,img2);
+
+//remove both shake & flip classes from the both card after 1.2ms
+setTimeout(()=>{
+// console.log("Card is not matched");
+        cardOne.classList.remove("shake", "flip")
+        cardTwo.classList.remove("shake" ,"flip")
+        cardOne=cardTwo="" //setting both card value to blank
+        disableDeck=false;
+    },1200)
+}
+
+function shuffleCards(){
+    matchCard=0
+    cardOne=cardTwo=""
+//creating an array of 16 items and each item is repeateed twice
+let arr=[1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
+arr.sort(()=>
+    Math.random() > 0.5? 1 : 4
+) //sorting array item randomly
+
+//removing flip class from all cards and passing rrandom image to each card
+    cards.forEach((card , index)=>{
+    // console.log(card);
+    card.classList.remove("flip")
+    let imgTag =card.querySelector("img")
+    imgTag.src=`image-${arr[index]}.jpg`
+    card.addEventListener("click",flipCard)
+    //adding click event to all cards
+})
+
+}
+
+ //check if winCount == half of cardValues
+ if(count==Math.floor(arrValues.length / 2)){
+            console.log(count);
+            console.log(arrValues);
+            result.innerHTML=`<h2><span>Moves:${count}</span></h2>`
+            console.log(result.innerHTML);
+        }
+
+
+shuffleCards()
+
+cards.forEach(card=>{
+    // console.log(card);
+    card.classList.remove("flip")
+    card.addEventListener("click",flipCard)
+    //adding click event to all cards
+})
+
+
+
+</script>
+</html>
